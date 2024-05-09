@@ -24,6 +24,7 @@ function App() {
   const [playerLP, setPlayerLP] = useState(0);
   const [playerWins, setPlayerWins] = useState(0);
   const [playerLosses, setPlayerLosses] = useState(0);
+  const [playerWinRate, setPlayerWinRate] = useState(null);
   const API_KEY = "RGAPI-ec025171-908f-40bc-b3fb-e48936aff41e";
 
   function searchForPlayer(event) {
@@ -48,7 +49,10 @@ function App() {
             setPlayerLP(firstEntry.leaguePoints);
             setPlayerWins(firstEntry.wins);
             setPlayerLosses(firstEntry.losses);
-            console.log(playerRankTier);
+            const winRate = Math.round(
+              (100 * firstEntry.wins) / (firstEntry.wins + firstEntry.losses)
+            );
+            setPlayerWinRate(winRate + "%");
           }
         });
       });
@@ -121,6 +125,7 @@ function App() {
           <p>
             {playerWins} W - {playerLosses} L
           </p>
+          <p>{playerWinRate} Winrate</p>
         </>
       )}
     </div>
