@@ -25,7 +25,7 @@ function App() {
   const [playerWins, setPlayerWins] = useState(0);
   const [playerLosses, setPlayerLosses] = useState(0);
   const [playerWinRate, setPlayerWinRate] = useState(null);
-  const API_KEY = "RGAPI-ec025171-908f-40bc-b3fb-e48936aff41e";
+  const API_KEY = "RGAPI-3b475eb2-0009-4ff5-ac16-a87cbc3ddf57";
 
   function searchForPlayer(event) {
     event.preventDefault();
